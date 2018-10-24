@@ -1,20 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- css style -->
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <link rel="stylesheet" href="public/css/style.css">
-
-    <!-- javascript -->
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-    <!------ Include the above in your HEAD tag ---------->
-    <title>Login</title>
-</head>
+{% include 'templates/header.twig' %}
 <body id="LoginForm">
     <div class="container">
         <h1 class="form-heading">MEME GENERATOR</h1>
@@ -39,7 +23,7 @@
                     </div>
                     <div class="forgot">
                         <a href="#">Mot de passe oublié</a>
-                        <a href="view/signup.php" style="float: right">S'inscrire?</a>
+                        <a href="signup" style="float: right">S'inscrire?</a>
                     </div>
                     <button type="submit" class="btn btn-primary">Se connecter</button>
                 </form>

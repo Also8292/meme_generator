@@ -6,7 +6,7 @@
  */
 function database_connexion() {
     try {
-        $connexion = new PDO('mysql:host=localhost;dbname=meme_creator;charset=utf8','root','');
+        $connexion = new PDO('mysql:host=localhost;dbname=meme_generator;charset=utf8','root','');
         return $connexion;
     }
     catch(Exception $ex) {
