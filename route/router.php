@@ -1,7 +1,7 @@
 <?php
 
-require 'vendor/autoload.php';
-require_once 'controller/controller.php';
+//require 'vendor/autoload.php';
+require_once 'controller/user_controller.php';
 
 //twig config
 $loader = new Twig_Loader_Filesystem('view');
