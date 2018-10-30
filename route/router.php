@@ -30,6 +30,12 @@ else if($link == 'signup') {
 else if($link == 'admin') {
     echo $twig->render('admin/admin.twig', ['title' => $link]);
 }
+else if($link == 'connect') {
+    echo $twig->render('connect.twig');
+}
+else if($link == 'bad') {
+    echo $twig->render('bad.twig');
+}
 else {
     echo $twig->render('error.twig', ['title' => $link]);
 }

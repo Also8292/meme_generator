@@ -8,24 +8,24 @@
                     <h2>CONNEXION</h2>
                     <p>Connectez-vous !!!</p>
                 </div>
-                <form id="Login">
+                <form action="" id="Login" method="POST">
 
                     <div class="form-group">
 
-                        <input type="email" class="form-control" id="inputEmail" placeholder="Pseudo ou Email">
+                        <input type="text" name="inputLogin" class="form-control" id="inputEmail" placeholder="Pseudo ou Email" required>
 
                     </div>
 
                     <div class="form-group">
 
-                        <input type="password" class="form-control" id="inputPassword" placeholder="Mot de passe">
+                        <input type="password" name="inputPassword" class="form-control" id="inputPassword" placeholder="Mot de passe" required>
 
                     </div>
                     <div class="forgot">
                         <a href="#">Mot de passe oublié</a>
                         <a href="signup" style="float: right">S'inscrire?</a>
                     </div>
-                    <button type="submit" class="btn btn-primary">Se connecter</button>
+                    <button type="submit" name="loginBtn" class="btn btn-primary">Se connecter</button>
                 </form>
             </div>
         </div>

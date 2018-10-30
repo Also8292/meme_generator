@@ -100,3 +100,34 @@ function add_meme_tag($id_meme, $id_tag) {
     $request = $connexion->prepare($query);
     $request->execute(array($id_meme, $id_tag));
 }
+
+
+
+/**
+ * verify user exist 
+ * @param string user email
+ * @return array
+ */
+function verify_user_exist($inputLogin) {
+    $connexion = database_connexion();
+    $query = "";
+
+    if(preg_match('#@#i', $inputLogin)) {
+        $query = 'SELECT * FROM users WHERE user_email = ?';
+    }
+    else {
+        $query = 'SELECT * FROM users WHERE pseudo = ?';
+    }
+
+    $request = $connexion->prepare($query);
+    $request->execute(array($inputLogin));
+
+    if($request->rowCount() != 0) {
+        return array('exist' => true, 'request' => $request);
+    }
+    else {
+        return array('exist' => false);
+    }
+}
+
+
