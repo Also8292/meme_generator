@@ -1,7 +1,7 @@
 <?php
 
 require_once 'controller/controller.php';
-// require_once 'controller/user_controller.php';
+require_once 'controller/user_controller.php';
 
 //twig config
 $loader = new Twig_Loader_Filesystem('view');
@@ -16,7 +16,17 @@ if($link == 'meme_creator') {
 }
 
 if($link == '/' || $link == 'accueil') {
-    echo $twig->render('accueil.twig', ['title' => $link]);
+    session_start();
+    if(isset($_SESSION['user']) && isset($_SESSION['email'])) {
+        echo $twig->render('accueil.twig', ['user' => $_SESSION['user'], 'email' => $_SESSION['email']]);
+    }
+    else {
+        echo $twig->render('accueil.twig', ['title' => $link]);
+    }
+}
+
+if($link == 'deconnexion') {
+    session_destroy();
 }
 
 else if($link == 'login') {
@@ -33,12 +43,12 @@ else if($link == 'admin') {
 else if($link == 'a-propos') {
     echo $twig->render('about.twig', ['title' => $link]);
 }
-else if($link == 'connect') {
-    echo $twig->render('connect.twig');
-}
-else if($link == 'bad') {
-    echo $twig->render('bad.twig');
-}
+// else if(preg_match('#accueil/#i', $link)) {
+//     echo $twig->render('connect.twig');
+// }
+// else if($link == 'bad') {
+//     echo $twig->render('bad.twig');
+// }
 // else if($link == 'download-meme') {
 
 // }

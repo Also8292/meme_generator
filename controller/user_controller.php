@@ -4,7 +4,7 @@ require_once 'model/model.php';
 
 
 /**
- * add user
+ * sign up
  */
 
 if(isset($_POST['addUserBtn'])) {
@@ -41,9 +41,15 @@ if(isset($_POST['loginBtn'])) {
         $verify_pass = false;
         while($result = $user_exist['request']->fetch()) {
             $verify_pass = password_verify($input_pass, $result['user_password']);
+            $user_pseudo = $result['pseudo'];
+            $email = $result['user_email'];
         }
         if($verify_pass) {
-            header('Location: connect');
+            session_start();
+            $_SESSION['user'] = $user_pseudo;
+            $_SESSION['email'] = $email;
+
+            header('Location: accueil');
         }
         else {
             header('Location: bad');

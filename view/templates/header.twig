@@ -63,8 +63,18 @@
                 Menu
               </button>
               <div class="dropdown-menu">
-                <a class="dropdown-item" href="login">Se connecter</a>
-                <a class="dropdown-item" href="signup">S'inscrire</a>
+
+                {% if user %}
+                
+                  <a class="dropdown-item" href="deconnexion">Deconnexion</a>
+
+                {% else %}
+                  
+                  <a class="dropdown-item" href="login">Se connecter</a>
+                  <a class="dropdown-item" href="signup">S'inscrire</a>
+
+                {% endif %}
+
                 <a class="dropdown-item" href="a-propos">A Propos</a>
               </div>
             </div>
