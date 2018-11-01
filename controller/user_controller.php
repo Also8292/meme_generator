@@ -53,11 +53,11 @@ if(isset($_POST['loginBtn'])) {
             header('Location: accueil');
         }
         else {
-            header('Location: bad');
+            echo('<script> alert("Mot de passe incorrect"); </script>');
         }
     }
     else {
-        echo 'Vous n\'étes pas inscrit';
+        echo('<script> alert("Vous n\'avez encore de compte\n Veillez vous inscrire"); </script>');
     }
 }
 
