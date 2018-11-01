@@ -1,6 +1,7 @@
 <?php
 
-require_once 'controller/user_controller.php';
+require_once 'controller/controller.php';
+// require_once 'controller/user_controller.php';
 
 //twig config
 $loader = new Twig_Loader_Filesystem('view');
@@ -38,6 +39,9 @@ else if($link == 'connect') {
 else if($link == 'bad') {
     echo $twig->render('bad.twig');
 }
+// else if($link == 'download-meme') {
+
+// }
 else {
     echo $twig->render('error.twig', ['title' => $link]);
 }

@@ -1,5 +1,5 @@
 <!-- Footer -->
-    <footer class="py-5 bg-dark">
+    <footer class="container-fluid py-5 bg-dark">
       <div class="container">
         <p class="m-0 text-center text-white">Copyright &copy; ACSDakar-Kéloumak 2018</p>
       </div>
@@ -7,9 +7,38 @@
     </footer>
 
     <!-- Bootstrap core JavaScript -->
-    <script src="public/jquery/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="public/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
     <script src="public/js/script.js"></script>
+    
+
+    <script>
+
+        function changeColor() {
+          document.querySelector('#top_text').style.color = document.querySelector('#color').value;
+          document.querySelector('#bottom_text').style.color = document.querySelector('#color').value;
+        }
+      
+        function displayText(destination, text) {
+          destination.innerText = text.value;
+        }
+
+        function downloadMeme(id) {
+          html2canvas($('#' + id), 
+          {
+            onrendered: function (canvas) {
+              var a = document.createElement('a');
+              // toDataURL defaults to png, so we need to request a jpeg, then convert for file download.
+              a.href = canvas.toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream");
+              a.download = 'firstmeme.jpg';
+              a.click();
+            }
+          });
+        }
+              
+      </script>
+
 
   </body>
 

@@ -1,7 +1,6 @@
 {% include 'templates/header.twig' %}
-    <div id="LoginForm">
-        <h1 class="form-heading">MEME GENERATOR</h1>
-        <div class="login-form">
+    <div class="container-fluid row">
+        <div class="container col-md-5">
             <div class="main-div">
                 <div class="panel">
                     <h2>CONNEXION</h2>
@@ -11,7 +10,7 @@
 
                     <div class="form-group">
 
-                        <input type="text" name="inputLogin" class="form-control" id="inputEmail" placeholder="Pseudo ou Email" required>
+                        <input type="text" name="inputLogin" class="form-control" id="inputEmail" placeholder="Pseudo ou Email" required autofocus>
 
                     </div>
 
@@ -29,4 +28,9 @@
             </div>
         </div>
     </div>
-{% include 'templates/footer.twig' %}
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="public/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+    <script src="public/js/script.js"></script>

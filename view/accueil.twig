@@ -3,26 +3,26 @@
 
     <!-- Page Content -->
     <div class="container">
-
-      <!-- Portfolio Item Heading -->
-      {# <h1 class="my-4">Page Heading
-        <small>Secondary Text</small>
-      </h1> #}
-
-      <div style="position: absolute; top: 55px; left: 125px; z-index: 1; width: 590px">
-        <p id="top_text" style="width: 100%; text-align: center; font-size: 40px; font-weight: bold"></p>
-      </div>
-
-      <div style="position: absolute; top: 310px; left: 125px; z-index: 1; width: 590px">
-        <p id="bottom_text" style="width: 100%; text-align: center; font-size: 40px; font-weight: bold"></p>
-      </div>
+    
 
       <!-- Portfolio Item Row -->
       <div class="row">
 
-        <div id="meme_image" class="col-md-8">
-          <img class="img-fluid" id="first_image" src="https://reboot.presse-citron.net/wp-content/uploads/2015/06/comment-etre-drole-faire-rire.jpg" alt="" style="width: 600px; height: 300px">
+        <div id="meme_image" class="col-md-6">
+          <div style="position: absolute; top: 5px; left: 5px; z-index: 1; width: 100%">
+            <p id="top_text" style="text-align: center; font-size: 40px; font-weight: bold"></p>
+          </div>
+
+          <div style="position: absolute; bottom: 0px; left: 5px; z-index: 1; width: 100%">
+            <p id="bottom_text" style="text-align: center; font-size: 40px; font-weight: bold"></p>
+          </div>
+
+          <div>
+            <img class="img-fluid" id="first_image" src="public/images/img1.jpg" alt="" style="width: 600px; height: 300px">
+          </div>
         </div>
+
+        <div class="col-md-2"></div>
 
         <div class="col-md-4">
           
@@ -39,26 +39,13 @@
               <label for="exampleInputPassword1">Couleur : </label>
               <input id="color" type="color" id="couleurTexte" name="color" onchange="changeColor()">
             </div>
-            <button class="btn btn-primary">Télécharger</button>
           </form>
+          <button class="btn btn-primary" onclick="downloadMeme('meme_image')">Télécharger</button>
           
         </div>
 
       </div>
-
-      <script>
-
-        function changeColor() {
-          document.querySelector('#top_text').style.color = document.querySelector('#color').value;
-          document.querySelector('#bottom_text').style.color = document.querySelector('#color').value;
-        }
       
-        function displayText(destination, text) {
-          destination.innerText = text.value;
-        }
-              
-      </script>
-
       <!-- /.row -->
 
       <!-- Related Projects Row -->
@@ -68,27 +55,27 @@
       <div class="row text-center">
 
         <div class="col-md-3 col-sm-6 mb-4 live__scroll--box" style="width=500px; height=300px">
-            <img class="img-fluid" src="https://reboot.presse-citron.net/wp-content/uploads/2015/06/comment-etre-drole-faire-rire.jpg" alt="" style="width=500px; height=300px" onclick='changeImage("https://reboot.presse-citron.net/wp-content/uploads/2015/06/comment-etre-drole-faire-rire.jpg")'>
+            <img class="img-fluid" src="public/images/img1.jpg" alt="" style="width=500px; height=300px" onclick='changeImage("public/images/img1.jpg")'>
         </div>
 
         <div class="col-md-3 col-sm-6 mb-4 live__scroll--box" style="width=500px; height=300px">
-            <img class="img-fluid" src="https://www.humour.com/medias/photos/2016/600x404/l-20161017203142.jpg" alt="" style="width=500px; height=300px" onclick='changeImage("https://www.humour.com/medias/photos/2016/600x404/l-20161017203142.jpg")'>
+            <img class="img-fluid" src="public/images/img2.jpg" alt="" style="width=500px; height=300px" onclick='changeImage("public/images/img2.jpg")'>
         </div>
 
         <div class="col-md-3 col-sm-6 mb-4 live__scroll--box" style="width=500px; height=300px">
-            <img class="img-fluid" src="https://i.pinimg.com/236x/dd/34/fd/dd34fd403ad90174b3b9968b267c10bf--sumatran-orangutan-baby-orangutan.jpg" alt="" style="width=500px; height=300px" onclick='changeImage("https://i.pinimg.com/236x/dd/34/fd/dd34fd403ad90174b3b9968b267c10bf--sumatran-orangutan-baby-orangutan.jpg")'>
+            <img class="img-fluid" src="public/images/img3.jpg" alt="" style="width=500px; height=300px" onclick='changeImage("public/images/img3.jpg")'>
         </div>
 
         <div class="col-md-3 col-sm-6 mb-4 live__scroll--box" style="width=500px; height=300px">
-            <img class="img-fluid" src="https://parismatch.be/app/uploads/2018/04/Macaca_nigra_self-portrait_large-e1524567086123-1100x715.jpg" alt="" style="width=500px; height=300px" onclick='changeImage("https://parismatch.be/app/uploads/2018/04/Macaca_nigra_self-portrait_large-e1524567086123-1100x715.jpg")'>
+            <img class="img-fluid" src="public/images/img4.jpg" alt="" style="width=500px; height=300px" onclick='changeImage("public/images/img4.jpg")'>
         </div>
 
         <div class="col-md-3 col-sm-6 mb-4 live__scroll--box" style="width=500px; height=300px">
-            <img class="img-fluid" src="https://media.koreus.com/201504/135-insolite-01.jpg" alt="" style="width=500px; height=300px" onclick='changeImage("https://media.koreus.com/201504/135-insolite-01.jpg")'>
+            <img class="img-fluid" src="public/images/img5.jpg" alt="" style="width=500px; height=300px" onclick='changeImage("public/images/img5.jpg")'>
         </div>
 
         <div class="col-md-3 col-sm-6 mb-4 live__scroll--box" style="width=500px; height=300px">
-            <img class="img-fluid" src="http://resize1-europe1.ladmedia.fr/r/622,311,FFFFFF,center-middle/img/var/europe1/storage/images/europe1/politique/humour-politique-hollande-laureat-du-grand-prix-2017-hulot-et-brigitte-macron-recompenses-3505697/45457559-1-fre-FR/Humour-politique-Hollande-laureat-du-Grand-prix-2017-Hulot-et-Brigitte-Macron-recompenses.jpg" alt="" style="width=500px; height=300px" onclick='changeImage("http://resize1-europe1.ladmedia.fr/r/622,311,FFFFFF,center-middle/img/var/europe1/storage/images/europe1/politique/humour-politique-hollande-laureat-du-grand-prix-2017-hulot-et-brigitte-macron-recompenses-3505697/45457559-1-fre-FR/Humour-politique-Hollande-laureat-du-Grand-prix-2017-Hulot-et-Brigitte-Macron-recompenses.jpg")'>
+            <img class="img-fluid" src="public/images/img6.jpg" alt="" style="width=500px; height=300px" onclick='changeImage("public/images/img6.jpg")'>
         </div>
 
       </div>
