@@ -60,7 +60,18 @@
           <ul class="navbar-nav ml-auto">
             <div class="dropdown">
               <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                Menu
+
+                {% if user %}
+                
+                 {% set user_pseudo = user %}
+
+                {% else %}
+                  
+                  {% set user_pseudo = 'Menu' %}
+
+                {% endif %}
+
+                {{ user_pseudo }}
               </button>
               <div class="dropdown-menu">
 
