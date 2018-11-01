@@ -1,6 +1,5 @@
 <?php
 
-//require 'vendor/autoload.php';
 require_once 'controller/user_controller.php';
 
 //twig config
@@ -29,6 +28,9 @@ else if($link == 'signup') {
 
 else if($link == 'admin') {
     echo $twig->render('admin/admin.twig', ['title' => $link]);
+}
+else if($link == 'a-propos') {
+    echo $twig->render('about.twig', ['title' => $link]);
 }
 else if($link == 'connect') {
     echo $twig->render('connect.twig');
