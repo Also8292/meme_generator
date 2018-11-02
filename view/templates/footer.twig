@@ -45,6 +45,19 @@
             }
           });
         }
+
+        function uploadImage(event) {
+          var onlineUrl = document.querySelector('#by_onlineUrl');
+          var localUrl = document.querySelector('#by_localUrl');
+
+          if(onlineUrl.value && localUrl.value) {
+            //event.preventDefault();
+            alert('Erreur ');
+          }
+          else {
+            alert('Good');
+          }
+        }
               
       </script>
 

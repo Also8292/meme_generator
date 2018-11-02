@@ -1,9 +1,4 @@
 <?php
-//require_once 'vendor/autoload.php';
-//require_once 'database.php';
-
-
-
 /**
  * database connexion
  * @return PDO connexion
@@ -69,11 +64,11 @@ function add_image($image_url) {
  * @param string meme_name, meme_link
  * @param integer user_id, image_id
  */
-function add_meme($meme_name, $user_id, $image_id) {
+function add_meme($meme_name, $user_id) {
     $connexion = database_connexion();
-    $query = 'INSERT INTO memes(meme_name, id_user, id_image) VALUES (?, ?, ?)';
+    $query = 'INSERT INTO memes(meme_name, id_user) VALUES (?, ?)';
     $request = $connexion->prepare($query);
-    $request->execute(array($meme_name, $user_id, $image_id));
+    $request->execute(array($meme_name, $user_id));
 }
 
 
