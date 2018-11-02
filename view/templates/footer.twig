@@ -51,14 +51,38 @@
           var localUrl = document.querySelector('#by_localUrl');
 
           if(onlineUrl.value && localUrl.value) {
-            //event.preventDefault();
-            alert('Erreur ');
+            onlineUrl.style.borderColor = '#ff0000';
+            localUrl.style.borderColor = '#ff0000';
+            alert('Vous ne pouvez pas choisir 2 images à la fois');
+          }
+          else if(!onlineUrl.value && !localUrl.value) {
+            alert('Choisissez une image en ligne ou sur votre ordinateur\nVous pouvez aussi choisir parmi les images proposées ci-dessous');
           }
           else {
-            alert('Good');
+            if(onlineUrl.value) {
+              document.querySelector('#first_image').src = onlineUrl.value;
+            }
+            if(localUrl.value) {
+              //document.querySelector('#first_image').src = localUrl.value;
+              $dir = dirname(localUrl.value);
+              alert('also');  
+            }
           }
         }
-              
+
+
+        function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#first_image')
+                    .attr('src', e.target.result)
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }   
       </script>
 
 
